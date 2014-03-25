@@ -1,13 +1,14 @@
 -- requirements
 require("Ego")
+require("FightController")
 
-p1 = Ego:new() 
-p2 = Ego:new({name="villain"})
 
 -- load
 function love.load()
 	text = "Hello"
-	p1.name = "Hero"
+	p1 = Ego:new({name="hero"}) 
+	p2 = Ego:new({name="villain"})
+	fc = FightController:new({},{p1},{p2})
 end
 
 -- update
@@ -33,6 +34,5 @@ end
 -- draw stuff
 function love.draw()
 	love.graphics.print(text, 400, 300)
-	p1:print(10)
-	p2:print(500)
+  fc:print(10)
 end

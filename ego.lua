@@ -21,5 +21,3 @@ function Ego:print(xpos)
 			offset = offset + 15
   end
 end
-
-
