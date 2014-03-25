@@ -15,10 +15,10 @@ function Ego:new (o)
 end
 
 function Ego:print(xpos)
-	local offset = 10
+	local offset = 15
 	for v in pairs(self) do
-      love.graphics.print(v .. " : " .. self[v], xpos, offset)
-			offset = offset + 10
+			love.graphics.print(v .. " : " .. tostring(self[v]), xpos, offset)
+			offset = offset + 15
   end
 end
 
