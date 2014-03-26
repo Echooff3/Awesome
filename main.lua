@@ -8,7 +8,10 @@ function love.load()
 	text = "Hello"
 	p1 = Ego:new({name="hero"}) 
 	p2 = Ego:new({name="villain"})
-	fc = FightController:new({},{p1},{p2})
+	fc = FightController
+	fc.new({p1},{p2})
+	fc:start()
+	fc:advance()
 end
 
 -- update
@@ -20,6 +23,10 @@ end
 function love.keypressed(key)
 	if key == 'b' then
 		text = "The B key was pressed."
+		local opt = {}
+		opt.badie = p2
+		opt.melee = p1.melee[0]
+		fc:advance(opt)
 	end
 end
 
@@ -33,6 +40,6 @@ end
 
 -- draw stuff
 function love.draw()
-	love.graphics.print(text, 400, 300)
+	love.graphics.print(text, 400, 500)
   fc:print(10)
 end

@@ -8,7 +8,8 @@ function Ego:new (o)
 	o.hp = o.hp or 100
 	o.def = o.def or 100
 	o.exp = o.exp or 10
-	o.melee = o.melee or Melee:new()  
+	o.melee = o.melee or Melee:new() 
+	o.points = o.points or 0
 	setmetatable(o, self)
 	self.__index = self
 	return o
